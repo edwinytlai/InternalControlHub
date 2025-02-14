@@ -20,7 +20,8 @@ export const loginRequest = {
 
 export async function handleLogin() {
   try {
-    await msalInstance.loginRedirect(loginRequest);
+    // Changed from loginRedirect to loginPopup
+    await msalInstance.loginPopup(loginRequest);
   } catch (error) {
     console.error(error);
   }
@@ -28,7 +29,8 @@ export async function handleLogin() {
 
 export async function handleLogout() {
   try {
-    await msalInstance.logoutRedirect();
+    // Changed from logoutRedirect to logoutPopup
+    await msalInstance.logoutPopup();
   } catch (error) {
     console.error(error);
   }
